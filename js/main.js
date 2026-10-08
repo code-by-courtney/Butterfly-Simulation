@@ -33,19 +33,19 @@ function animate() {
     ctx.fill();
 
     //left bottom wing
-     ctx.beginPath();
-    ctx.ellipse(x + 20, y - 15, 20, 30, -0.5, 0, Math.PI * 2);
+    ctx.beginPath();
+    ctx.ellipse(x - 18, y + 20, 15, 22, -0.5, 0, Math.PI * 2);
     ctx.fill();
 
     //bottom right wing
     ctx.beginPath();
-    ctx.ellipse(x + 20, y - 15, 20, 30, 0.5, 0, Math.PI * 2);
+    ctx.ellipse(x + 18, y + 20, 15, 22, 0.5, 0, Math.PI * 2);
     ctx.fill();
 
     //butterfly body
     ctx.beginPath();
     ctx.ellipse(x, y, 8, 25, 0, 0, Math.PI * 2);
-    ctx.fillStyle = "skyblue";
+    ctx.fillStyle = "white";
     ctx.fill();
 
     // Keep the animation going
