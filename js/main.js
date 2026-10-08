@@ -11,6 +11,7 @@ let y = 250;
 
 // Butterfly speed
 let speed = 2;
+let wingAngle = 0;
 
 function animate() {
     // Clear the canvas
@@ -21,25 +22,56 @@ function animate() {
 
     //butterfly wings
 
+    wingAngle += 0.15;
+
     //top left wing
     ctx.beginPath();
-    ctx.ellipse(x - 20, y - 15, 20, 30, -0.5, 0, Math.PI * 2);
-    ctx.fillStyle = "purple";
+    ctx.ellipse(
+        x - 20, 
+        y - 15, 
+        20,
+        30,
+        -0.5 + Math.sin(wingAngle) * 0.3, 
+        0, 
+        Math.PI * 2);
+    ctx.fillStyle = "skyblue";
     ctx.fill();
 
     // top right wing
     ctx.beginPath();
-    ctx.ellipse(x + 20, y - 15, 20, 30, 0.5, 0, Math.PI * 2);
+    ctx.ellipse(
+        x + 20, 
+        y - 15, 
+        20,
+        30,
+        0.5 + Math.sin(wingAngle) * 0.3, 
+        0, 
+        Math.PI * 2);
+    ctx.fillStyle = "skyblue";
     ctx.fill();
 
     //left bottom wing
     ctx.beginPath();
-    ctx.ellipse(x - 18, y + 20, 15, 22, -0.5, 0, Math.PI * 2);
+    ctx.ellipse(
+        x - 18, 
+        y + 20, 
+        15, 
+        22, 
+        -0.5 + Math.sin(wingAngle) * 0.3, 
+        0, 
+        Math.PI * 2);
     ctx.fill();
 
     //bottom right wing
     ctx.beginPath();
-    ctx.ellipse(x + 18, y + 20, 15, 22, 0.5, 0, Math.PI * 2);
+    ctx.ellipse(
+        x + 18, 
+        y + 20, 
+        15, 
+        22, 
+        0.5 + Math.sin(wingAngle) * 0.3, 
+        0, 
+        Math.PI * 2);
     ctx.fill();
 
     //butterfly body
