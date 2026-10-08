@@ -1,37 +1,33 @@
-// Find the canvas element in our HTML
 const canvas = document.getElementById("canvas");
-
-// Get its 2D drawing tools
 const ctx = canvas.getContext("2d");
 
-// Make the canvas match the browser window
+// Set canvas size
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-//circle
+// Butterfly position
 let x = 100;
 let y = 250;
+
+// Butterfly speed
 let speed = 2;
 
-// ------
-//Animation
-// ------
-
 function animate() {
+    // Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    //Move the circle
-    x = x + speed;
+    // Move the butterfly
+    x += speed;
 
-    //draw the cicle
+    // Draw butterfly body
     ctx.beginPath();
-    ctx.arc(x, y, 60, 0, Math.PI * 2);
-
-    ctx.fillStyle = "deepskyblue";
+    ctx.ellipse(x, y, 8, 25, 0, 0, Math.PI * 2);
+    ctx.fillStyle = "black";
     ctx.fill();
 
+    // Keep the animation going
     requestAnimationFrame(animate);
 }
 
-//start of animatioin
+// Start animation
 animate();
