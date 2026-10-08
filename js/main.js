@@ -80,6 +80,19 @@ function animate() {
     ctx.fillStyle = "white";
     ctx.fill();
 
+    // Antennae
+ctx.beginPath();
+ctx.moveTo(x - 4, y - 20);
+ctx.quadraticCurveTo(x - 15, y - 40, x - 20, y - 45);
+ctx.strokeStyle = "white";
+ctx.lineWidth = 2;
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(x + 4, y - 20);
+ctx.quadraticCurveTo(x + 15, y - 40, x + 20, y - 45);
+ctx.stroke();
+
     // Keep the animation going
     requestAnimationFrame(animate);
 }
