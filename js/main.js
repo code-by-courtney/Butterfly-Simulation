@@ -12,6 +12,7 @@ let y = 250;
 // Butterfly speed
 let speed = 2;
 let wingAngle = 0;
+let floatAngle = 0;
 
 function animate() {
     // Clear the canvas
@@ -19,6 +20,9 @@ function animate() {
 
     // Move the butterfly
     x += speed;
+    floatAngle += 0.03;
+    y = 250 + Math.sin(floatAngle) * 50;
+    
 
     //butterfly wings
 
@@ -92,6 +96,16 @@ ctx.beginPath();
 ctx.moveTo(x + 4, y - 20);
 ctx.quadraticCurveTo(x + 15, y - 40, x + 20, y - 45);
 ctx.stroke();
+
+// Antenna tips
+ctx.beginPath();
+ctx.arc(x - 20, y - 45, 3, 0, Math.PI * 2);
+ctx.fillStyle = "white";
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(x + 20, y - 45, 3, 0, Math.PI * 2);
+ctx.fill();
 
     // Keep the animation going
     requestAnimationFrame(animate);
